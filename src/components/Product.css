@@ -1,0 +1,13 @@
+#myMain_Product{
+    display: none;
+}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #mySVG_Product{
+        margin-top:-10px;
+    }
+    .container_Product{
+        margin-top:-100px;
+    }
+}

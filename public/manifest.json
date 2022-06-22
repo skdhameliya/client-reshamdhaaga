@@ -1,0 +1,25 @@
+{
+    "short_name": "client",
+    "name": "client",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "https://productzz.netlify.app/",
+    "display": "standalone",
+    "theme_color": "#42f5c5",
+    "background_color": "#6E2C00"
+  }
