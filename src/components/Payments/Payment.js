@@ -39,8 +39,8 @@ export const Payment = async(p_title, amount, address, quantity) => {
               "color": "#3399cc"
             },
             "handler": function (response){
-//                 alert("Your Payment ID = "+response.razorpay_payment_id+ " please take the screenshot");
-                window.open("https://wa.me/+918980129712?text=Your Payment ID = "+response.razorpay_payment_id);
+                alert("Your Payment ID = "+response.razorpay_payment_id+ " please take the screenshot");
+                
 
                 // alert("Your Order ID = "+response.razorpay_order_id);
                 // alert(response.razorpay_signature)
