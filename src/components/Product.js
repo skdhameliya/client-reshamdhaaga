@@ -1,10 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-
-// require("./Payments/Payment.js")
 import { Payment } from './Payments/Payment';
 import Footer from './Footer/Footer';
-import GetAllProducts from './GetAllProducts';
 import './Product.css'
 
 const Product = () => {
@@ -50,18 +47,6 @@ const Product = () => {
     }
   }
 
-  // const noOfQuantity = (n) => {
-  //   let x = Number(document.getElementById("quantityNo").value)
-  //   console.log(x);
-
-  //   x = x+n
-  //   if(x<0){
-  //     document.getElementById("quantityNo").value = 0
-  //   }else{
-  //     document.getElementById("quantityNo").value = x
-  //   }
-  // }
-
   return (
     
     <>
@@ -69,8 +54,6 @@ const Product = () => {
 
     <div id='myMain_Product'>
       
-      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250"><path fill="#6E2C00" fillOpacity="1" d="M0,128L720,192L1440,128L1440,0L720,0L0,0Z"></path></svg> */}
-
       <div className="container-fluid pb-1" style={{"background":"#6E2C00"}}>
         <h1 className="myTitle text-center pt-5 mb-0">{Product1.title}</h1>
       </div>
@@ -94,49 +77,34 @@ const Product = () => {
               <p className="bd-highlight"><b>Price : </b><b style={{"color":"green"}}>&#8377; {Product1.price}</b></p>
               
               <div className="bd-highlight">
-                <b>Add Quantity : </b>
-                <div className="btn-group" role="group" aria-label="Basic example">
-                  {/* <button type="button" onClick={() => noOfQuantity(-1)} className="btn btn-secondary">-</button> */}
-                  <input type="number" min={1} id='quantityNo' placeholder='  add quantity' />
-                  {/* <button type="button" onClick={() => noOfQuantity(1)} className="btn btn-secondary">+</button> */}
-                </div>
-              </div> 
+                <div className="input-group">
+                    <span className="input-group-text">Add Quantity</span>
+                    <input type="number" min={1} id="quantityNo" className="form-control" placeholder="add quantity" required />
+                  </div>
+              </div>
               
             </div>
-            <div className="bd-highlight mt-3">
-              <button className="btn btn-success bd-highlight" data-toggle="modal" data-target="#myModal">Buy</button>
-            </div>
-          </div>
+              
+              <div className="bd-highlight mt-3">
+                <div className="input-group">
+                  <span className="input-group-text">Address</span>
+                  <input type="text" id="user_address" className="form-control" placeholder="enter full delivery address" required />
+                  
+                </div>
+                <small className="form-text text-muted"><b>Format:</b> House no, Society Name, Landmark Name, City-Pincode, State, Country</small>
+                
+                <div className="btn-group mt-3" role="group" aria-label="Basic example">
+                  <a className="btn btn-success" href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank">WhatsApp</a>
+                  <button id="rzp-button1" onClick={checkAddress} className="btn btn-info">Buy</button>
+                </div>
+              </div>
 
+          </div>
+      
       </div>
 
-
-      <div className="modal fade" id="myModal">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-          
-            <div className="modal-header">
-              <h4 className="modal-title">Add Your Delivery Address</h4>
-              <button type="button" className="close" data-dismiss="modal">&times;</button>
-            </div>
-            
-            <div className="modal-body">
-              <div className="input-group">
-                <span className="input-group-text">Address</span>
-                <input type="text" id="user_address" className="form-control" placeholder="enter full delivery address" required />
-                <small className="form-text text-muted"><b>Format:</b> House no, Society Name, Landmark Name, City-Pincode, State, Country</small>
-              </div>
-              
-              <div className="btn-group mt-3" role="group" aria-label="Basic example">
-                <a className="btn btn-success" href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank">WhatsApp</a>
-                <button id="rzp-button1" onClick={checkAddress} className="btn btn-info">Buy</button>
-              </div>
-              
-              
-            </div>
-            
-          </div>
-        </div>
+      <div id="paymentDialog">
+      {/* <dialog id='myDialog1'> html tag </dialog> */}
       </div>
 
       <Footer />

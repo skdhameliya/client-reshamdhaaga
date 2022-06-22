@@ -22,7 +22,7 @@ const AdminAdd = () => {
 
     const addProduct = (event) => {
         event.preventDefault()
-        const p_id = document.getElementById(`basic-id`).value;
+        const p_id = (document.getElementById(`basic-id`).value).toLowerCase();
         const p_title = document.getElementById(`basic-title`).value;
         const p_price = document.getElementById(`basic-price`).value;
         let p_photos = [];

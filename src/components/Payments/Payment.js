@@ -1,6 +1,8 @@
+import './Payment.css'
+
 export const Payment = async(p_title, amount, address, quantity) => {
 
-    console.log("--"+p_title+"--"+amount+"--"+address+"--"+quantity+"<--");
+    // console.log("--"+p_title+"--"+amount+"--"+address+"--"+quantity+"<--");
     const loadRazorScript = (scriptUrl) => {
         return new Promise((resolve) => {
           const script = document.createElement("script")
@@ -39,16 +41,30 @@ export const Payment = async(p_title, amount, address, quantity) => {
               "color": "#3399cc"
             },
             "handler": function (response){
-                alert("Your Payment ID = "+response.razorpay_payment_id+ " please take the screenshot");
-                
+                if(response.razorpay_payment_id){
+                  let text = "Your Payment ID = "+response.razorpay_payment_id+" please take the screenshot"
+                  if(window.confirm(text) == true || window.confirm(text) == false) {
+                    
+                    let orderDetailUrl = " *Payment ID ->* "+response.razorpay_payment_id
+                    +", *Product Name ->* "+p_title
+                    +", *Quantity ->* "+quantity
+                    +", *Total Amount ->* "+(amount*quantity)
+                    +", *Delivery Address ->* "+address
+                    +", *Product Link ->* "+window.location.href
+                    +", *Thank you for shopping with us!*"
 
-                // alert("Your Order ID = "+response.razorpay_order_id);
-                // alert(response.razorpay_signature)
-    
-                // if(response.razorpay_payment_id){
-                //   // do backend stuff
-                //   alert("do backend stuff...payment done")
-                // }
+                    let str = ""
+                    str += "<center><dialog id='myDialog1' class='p-5 m-3'>"
+                      str += "<b>Please Save Your Payment ID : </b>"+response.razorpay_payment_id+" <br> <a class='btn btn-success mt-3' href='https://wa.me/+918980129712?text=Hi, Your Order Details : "+orderDetailUrl+"'>Send To WhatsApp</a>"
+                    str += "</dialog></center>"
+                    
+                    window.document.getElementById("paymentDialog").innerHTML = str
+                    window.document.getElementById("myDialog1").show()
+                  }
+                }else{
+                  alert('payment failed, if money is deducted, it will be refunded within 2-3 working days')
+                }
+                
             }
         }
     
@@ -56,3 +72,4 @@ export const Payment = async(p_title, amount, address, quantity) => {
         rzp1.open()
 
 }
+
