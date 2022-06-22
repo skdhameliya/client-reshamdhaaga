@@ -25,7 +25,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
         }
     
         const options = {
-            "key": "rzp_test_WjOb7STxd27KO2", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_test_kUEScWO2XntWAl", // Enter the Key ID generated from the Dashboard
             "amount": quantity * amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "SKD STORE "+p_title,
