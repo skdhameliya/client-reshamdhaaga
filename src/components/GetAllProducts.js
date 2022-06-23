@@ -1,10 +1,7 @@
 import React, { useState, useEffect, Component } from "react";
 import '../components/GetAllProducts.css'
 import { Link } from "react-router-dom";
-import Footer from "./Footer/Footer"
-import OurCustomers from "./Our Customers/OurCustomers";
-import AboutUs from "./About Us/AboutUs";
-import NavBar from "./NavBar/NavBar";
+
 
 const GetAllProducts = () => {
 
@@ -38,14 +35,6 @@ const GetAllProducts = () => {
                 </center>
                 
         <div id="myMain_GetAllProducts">
-        <NavBar />
-
-            <div className="container-fluid pb-1" style={{"background":"#6E2C00"}}>
-                <h1 className="myTitle text-center pt-5 mb-0">Reshamdhaaga</h1>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1440 320"><path fill="#6E2C00" fillOpacity="1" d="M0,128L720,192L1440,128L1440,0L720,0L0,0Z"></path></svg>
-
-            <AboutUs />
 
             <div className="container" id="ourProducts">
                 <h1 className='myTitle text-center mb-5' style={{"color":"#6E2C00"}}>Our Products</h1>
@@ -65,8 +54,6 @@ const GetAllProducts = () => {
                 </div>
             </div>
 
-            <OurCustomers />    
-            <Footer />
         </div>
         </>
     )

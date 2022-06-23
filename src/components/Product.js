@@ -4,6 +4,7 @@ import { Payment } from './Payments/Payment';
 import Footer from './Footer/Footer';
 import './Product.css'
 
+
 const Product = () => {
   
   const {productID} = useParams();
