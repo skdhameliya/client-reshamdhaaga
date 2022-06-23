@@ -50,7 +50,10 @@ const Product = () => {
   return (
     
     <>
-        <center><div id='loaderSpinner' className="spinner-border mt-5"></div></center>
+        <center id='loaderSpinner'>
+          <div className="spinner-border mt-5"></div>
+          <p>Please wait...</p>
+        </center>
 
     <div id='myMain_Product'>
       
@@ -94,8 +97,9 @@ const Product = () => {
                 <small className="form-text text-muted"><b>Format:</b> House no, Society Name, Landmark Name, City-Pincode, State, Country</small>
                 
                 <div className="btn-group mt-3" role="group" aria-label="Basic example">
-                  <a className="btn btn-success" href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank">WhatsApp</a>
-                  <button id="rzp-button1" onClick={checkAddress} className="btn btn-info">Buy</button>
+                  <a className="btn btn-danger mt-1 mr-1 mb-1" href={Product1.instagram_link} type="button" target="_blank">Instagram</a>
+                  <a className="btn btn-success m-1" href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank">WhatsApp</a>
+                  <button id="rzp-button1" onClick={checkAddress} className="btn btn-info m-1">Buy</button>
                 </div>
               </div>
 

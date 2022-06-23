@@ -30,6 +30,11 @@ const AdminAdd = () => {
             p_photos.push(document.getElementById(`basic-photo-url-${i}`).value)
         }
         
+        let p_instagram_link = document.getElementById(`Product-Instagram-Link`).value;
+        if(!p_instagram_link){
+            p_instagram_link = "https://www.instagram.com/rakhi_reshamdhaaga/"
+        }
+        
         if(p_id && p_title && p_price && p_photos){
             fetch("https://reshamdhaaga.herokuapp.com/add_product", {
                 method: "POST",
@@ -37,7 +42,8 @@ const AdminAdd = () => {
                     id: p_id,
                     title: p_title,
                     price: p_price,
-                    photos: p_photos
+                    photos: p_photos,
+                    instagram_link : p_instagram_link
                 }),
                 headers: {
                     "Content-type": "application/json"
@@ -81,7 +87,12 @@ const AdminAdd = () => {
                             </div>
                         ))
                     }
-                    <button type="submit" className="btn btn-success">Add Product</button>
+                    <div className="input-group">
+                        <span className="input-group-text">Product Instagram Link</span>
+                        <input type="url" id="Product-Instagram-Link" className="form-control" placeholder="product instagram link" aria-label="photo ur1l" aria-describedby="basic-addon1" />
+                    </div>
+                    <small className="form-text text-muted"><b>Default link:</b> https://www.instagram.com/rakhi_reshamdhaaga/</small>
+                    <button type="submit" className="btn btn-success mt-3">Add Product</button>
                 </form>
             </div>
         </div>

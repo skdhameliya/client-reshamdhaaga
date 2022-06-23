@@ -12,6 +12,7 @@ const Footer = () => {
                     <a className="p-1" href="https://www.instagram.com/rakhi_reshamdhaaga/" target={"_blank"}><img src="https://img.icons8.com/fluency/48/undefined/instagram-new.png" alt="Instagram" /></a>
                     <a className="p-1" href="https://www.instagram.com/rakhi_reshamdhaaga/" target={"_blank"}> <img src="https://img.icons8.com/color/48/undefined/facebook-new.png" alt="Facebook" /> </a>
                 </div>
+                {/* <p>All rights are reserved by <a className="p-1" href="https://www.instagram.com/rakhi_reshamdhaaga/" target={"_blank"}> Reshamdhaaga</a></p> */}
             </div>
       </div>
     </>

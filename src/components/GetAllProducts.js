@@ -32,8 +32,9 @@ const GetAllProducts = () => {
 
     return (
         <>
-                <center>
-                    <div id='loader' className="spinner-border mt-5"></div>
+                <center id='loader'>
+                    <div className="spinner-border mt-5"></div>
+                    <p>Please wait...Amazing products are loading.</p>
                 </center>
                 
         <div id="myMain_GetAllProducts">
