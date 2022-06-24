@@ -37,7 +37,7 @@ const GetAllProducts = () => {
         <div id="myMain_GetAllProducts">
 
             <div className="container" id="ourProducts">
-                <h1 className='myTitle text-center mb-5'>Reshamdhaaga Art</h1>
+                <h1 className='myTitle text-center mb-5'>Our Products</h1>
                 <div className="row justify-content-center">
                     {/* <div className="col-12"> */}
                         {
