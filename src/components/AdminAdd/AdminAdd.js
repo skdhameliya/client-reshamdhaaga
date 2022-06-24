@@ -63,9 +63,9 @@ const AdminAdd = () => {
   return (
     
     <div className="container mt-5 mb-5">
-            <h1 className='text-center myTitle mb-5'>Add Product</h1>
+            <h1 className='text-center myTitle'>Add Product</h1>
             <center>
-                <div className="dropdown">
+                <div className="dropdown mt-4">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         select total images to upload
                     </button>
