@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom'
 const AdminAdd = () => {
 
     let [Arr, setArr] = useState([])
-    const {n} = useParams()
+    let [n, setN] = useState(1)
+    // const {n} = useParams()
     
     useEffect(() => {
         if(!(n>0 && n<=10)){
@@ -12,13 +13,14 @@ const AdminAdd = () => {
             document.body.innerHTML = ("problem in url...value should be between 1 to 10")
         }
         else{
+            document.title = "Add Product - "+n
             let a = []
             for(let i=1; i<=n; i++){
                a.push(i)
             }
             setArr(a)
         }
-    },[])
+    },[n])
 
     const addProduct = (event) => {
         event.preventDefault()
@@ -61,9 +63,30 @@ const AdminAdd = () => {
   return (
     
     <div className="container mt-5 mb-5">
-        <div className="row">
+            <h1 className='text-center myTitle mb-5'>Add Product</h1>
+            <center>
+                <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        select total images to upload
+                    </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" style={{"background":"pink"}}>
+                        <p className="dropdown-item" onClick={() => setN(1)}>1</p>
+                        <p className="dropdown-item" onClick={() => setN(2)}>2</p>
+                        <p className="dropdown-item" onClick={() => setN(3)}>3</p>
+                        <p className="dropdown-item" onClick={() => setN(4)}>4</p>
+                        <p className="dropdown-item" onClick={() => setN(5)}>5</p>
+                        <p className="dropdown-item" onClick={() => setN(6)}>6</p>
+                        <p className="dropdown-item" onClick={() => setN(7)}>7</p>
+                        <p className="dropdown-item" onClick={() => setN(8)}>8</p>
+                        <p className="dropdown-item" onClick={() => setN(9)}>9</p>
+                        <p className="dropdown-item" onClick={() => setN(10)}>10</p>
+                    </div>
+                </div>
+            </center>
+
+        <div className="row mt-5">
+
             <div className="col-12">
-                <h1 className='text-center myTitle mb-5'>Add Product</h1>
                 <form id='myForm1' onSubmit={addProduct}>
                     <div className="input-group mb-3">
                         <span className="input-group-text myBackColor">Product Id</span>
@@ -81,7 +104,7 @@ const AdminAdd = () => {
                         Arr.map(i => (
                             <div key={i}>
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text">Product Photo URL {i}</span>
+                                    <span className="input-group-text">Product Photo URL-{i}</span>
                                     <input type="url" id={`basic-photo-url-${i}`} className="form-control" placeholder="product photo url" aria-label="photo ur1l" aria-describedby="basic-addon1" required />
                                 </div>
                             </div>
@@ -92,7 +115,13 @@ const AdminAdd = () => {
                         <input type="url" id="Product-Instagram-Link" className="form-control" placeholder="product instagram link" aria-label="photo ur1l" aria-describedby="basic-addon1" />
                     </div>
                     <small className="form-text text-muted"><b>Default link:</b> https://www.instagram.com/rakhi_reshamdhaaga/</small>
-                    <button type="submit" className="btn btn-success mt-3">Add Product</button>
+
+                    <div className="btn-group mt-3" role="group" aria-label="Basic example">
+                        <button type="reset" className="btn btn-danger">Clear All</button>
+                        <button type="submit" className="btn btn-success">Add Product</button>
+                        <a type="button" className="btn btn-danger" href='/admin1/delete' target={"_blank"}>Delete</a>
+                    </div>
+
                 </form>
             </div>
         </div>

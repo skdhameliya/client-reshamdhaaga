@@ -14,7 +14,8 @@ root.render(
     <Routes>
       <Route exact path="/" element={<App />} />
       <Route exact path="/product/:productID" element={<Product />} />
-      <Route exact path="/admin1/add/:n" element={<AdminAdd />} />
+      {/* <Route exact path="/admin1/add/:n" element={<AdminAdd />} /> */}
+      <Route exact path="/admin1/add" element={<AdminAdd />} />
       <Route exact path="/admin1/delete" element={<AdminDelete />} />
       <Route exact path="*" element={<NotFound_404 />} />
     </Routes>
