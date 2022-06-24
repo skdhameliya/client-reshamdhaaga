@@ -1,10 +1,6 @@
 #myMain_GetAllProducts{
     display: none;
 }
-.myTitle{
-    font-family: 'Frijole', cursive;
-    color: aquamarine;
-}
 
 .card{
     width: 20rem;

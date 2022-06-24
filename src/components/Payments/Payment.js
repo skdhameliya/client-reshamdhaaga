@@ -38,7 +38,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
               "Customer Address": address
             },
             "theme": {
-              "color": "#3399cc"
+              "color": "#94618e"
             },
             "handler": function (response){
                 if(response.razorpay_payment_id){

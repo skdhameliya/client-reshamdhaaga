@@ -58,10 +58,10 @@ const Product = () => {
 
     <div id='myMain_Product'>
       
-      <div className="container-fluid pb-1" style={{"background":"#6E2C00"}}>
-        <h1 className="myTitle text-center pt-5 mb-0">{Product1.title}</h1>
+      <div className="container-fluid titleDiv pb-1">
+        <h1 className="myMainTitle text-center pt-5 mb-0">{Product1.title}</h1>
       </div>
-      <svg id='mySVG_Product' xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1440 320"><path fill="#6E2C00" fillOpacity="1" d="M0,128L720,192L1440,128L1440,0L720,0L0,0Z"></path></svg>
+      <svg id='mySVG_Product' xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1440 320"><path fill="#F4DECB" fillOpacity="1" d="M0,128L720,192L1440,128L1440,0L720,0L0,0Z"></path></svg>
 
 
       <div className="container container_Product">
@@ -78,11 +78,11 @@ const Product = () => {
 
           <div className="d-flex flex-column bd-highlight mt-5 ml-3">
             <div className="bd-highlight">
-              <p className="bd-highlight"><b>Price : </b><b style={{"color":"green"}}>&#8377; {Product1.price}</b></p>
+              <p className="bd-highlight"><b>Price : &#8377; {Product1.price}</b></p>
               
               <div className="bd-highlight">
                 <div className="input-group">
-                    <span className="input-group-text">Add Quantity</span>
+                    <span className="input-group-text myBackColor">Add Quantity</span>
                     <input type="number" min={1} id="quantityNo" className="form-control" placeholder="add quantity" required />
                   </div>
               </div>
@@ -91,16 +91,16 @@ const Product = () => {
               
               <div className="bd-highlight mt-3">
                 <div className="input-group">
-                  <span className="input-group-text">Address</span>
+                  <span className="input-group-text myBackColor">Address</span>
                   <input type="text" id="user_address" className="form-control" placeholder="enter full delivery address" required />
                   
                 </div>
                 <small className="form-text text-muted"><b>Format:</b> House no, Society Name, Landmark Name, City-Pincode, State, Country</small>
                 
+                <button id="rzp-button1" onClick={checkAddress} className="btn myBackColor mt-3">Buy</button>
                 <div className="btn-group mt-3" role="group" aria-label="Basic example">
-                  <a className="btn btn-danger mt-1 mr-1 mb-1" href={Product1.instagram_link} type="button" target="_blank">Instagram</a>
-                  <a className="btn btn-success m-1" href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank">WhatsApp</a>
-                  <button id="rzp-button1" onClick={checkAddress} className="btn btn-info m-1">Buy</button>
+                  <a href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="" /></a>
+                  <a href={Product1.instagram_link} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="" /></a>
                 </div>
               </div>
 

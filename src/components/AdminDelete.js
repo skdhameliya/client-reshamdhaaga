@@ -31,7 +31,7 @@ const AdminDelete = () => {
             <div className="col-sm-12">
                 <h1 className="myTitle text-center">Delete Product By ID</h1>
                 <div className="input-group mt-5 mb-5">
-                    <span className="input-group-text">Product Id</span>
+                    <span className="input-group-text myBackColor">Product Id</span>
                     <input type="text"  id="product_id" className="form-control" placeholder="enter product id" aria-label="id" aria-describedby="basic-addon1" required />
                 </div>
                 <button onClick={deleteProduct} type="submit" className="btn btn-danger">Delete Product</button>

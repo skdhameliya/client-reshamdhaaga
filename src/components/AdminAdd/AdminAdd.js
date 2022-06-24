@@ -66,15 +66,15 @@ const AdminAdd = () => {
                 <h1 className='text-center myTitle mb-5'>Add Product</h1>
                 <form id='myForm1' onSubmit={addProduct}>
                     <div className="input-group mb-3">
-                        <span className="input-group-text">Product Id</span>
+                        <span className="input-group-text myBackColor">Product Id</span>
                         <input type="text"  id="basic-id" className="form-control" placeholder="product id" aria-label="id" aria-describedby="basic-addon1" required />
                     </div>
                     <div className="input-group mb-3">
-                        <span className="input-group-text">Product Title</span>
+                        <span className="input-group-text myBackColor">Product Title</span>
                         <input type="text" id="basic-title" className="form-control" placeholder="product title" aria-label="title" aria-describedby="basic-addon1" required />
                     </div>
                     <div className="input-group mb-3">
-                        <span className="input-group-text">Product Price</span>
+                        <span className="input-group-text myBackColor">Product Price</span>
                         <input type="number" id="basic-price" className="form-control" placeholder="product price" aria-label="price" aria-describedby="basic-addon1" required />
                     </div>
                     {
@@ -88,7 +88,7 @@ const AdminAdd = () => {
                         ))
                     }
                     <div className="input-group">
-                        <span className="input-group-text">Product Instagram Link</span>
+                        <span className="input-group-text myBackColor">Product Instagram Link</span>
                         <input type="url" id="Product-Instagram-Link" className="form-control" placeholder="product instagram link" aria-label="photo ur1l" aria-describedby="basic-addon1" />
                     </div>
                     <small className="form-text text-muted"><b>Default link:</b> https://www.instagram.com/rakhi_reshamdhaaga/</small>
