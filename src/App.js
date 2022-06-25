@@ -1,10 +1,10 @@
 import React from 'react'
 import Footer from './components/Footer/Footer'
-import GetAllProducts from './components/GetAllProducts'
 import NavBar from './components/NavBar/NavBar'
 import AboutUs from './components/About Us/AboutUs'
 import OurCustomers from './components/Our Customers/OurCustomers'
 import "./App.css"
+import GetSomeProductsForIndexPage from './components/GetSomeProductsForIndexPage/GetSomeProductsForIndexPage'
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1440 320"><path fill="#F4DECB" fillOpacity="1" d="M0,128L720,192L1440,128L1440,0L720,0L0,0Z"></path></svg>
 
       <AboutUs />
-      <GetAllProducts />
+      <GetSomeProductsForIndexPage />
       <OurCustomers />    
       <Footer />
     </>

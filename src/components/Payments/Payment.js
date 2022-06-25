@@ -2,7 +2,6 @@ import './Payment.css'
 
 export const Payment = async(p_title, amount, address, quantity) => {
 
-    // console.log("--"+p_title+"--"+amount+"--"+address+"--"+quantity+"<--");
     const loadRazorScript = (scriptUrl) => {
         return new Promise((resolve) => {
           const script = document.createElement("script")

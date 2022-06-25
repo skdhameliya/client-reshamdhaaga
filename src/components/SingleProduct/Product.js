@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import { Payment } from './Payments/Payment';
-import Footer from './Footer/Footer';
+import { Payment } from '../Payments/Payment'
+import Footer from '../Footer/Footer'
 import './Product.css'
 
 
@@ -77,7 +77,8 @@ const Product = () => {
 
 
           <div className="d-flex flex-column bd-highlight mt-5 ml-3">
-            <div className="bd-highlight">
+              <p className="bd-highlight"><b>Product Type : {Product1.product_type}</b></p>
+
               <p className="bd-highlight"><b>Price : &#8377; {Product1.price}</b></p>
               
               <div className="bd-highlight">
@@ -86,9 +87,7 @@ const Product = () => {
                     <input type="number" min={1} id="quantityNo" className="form-control" placeholder="add quantity" required />
                   </div>
               </div>
-              
-            </div>
-              
+          
               <div className="bd-highlight mt-3">
                 <div className="input-group">
                   <span className="input-group-text myBackColor">Address</span>

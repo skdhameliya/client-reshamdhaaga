@@ -36,12 +36,15 @@ const AdminAdd = () => {
         if(!p_instagram_link){
             p_instagram_link = "https://www.instagram.com/rakhi_reshamdhaaga/"
         }
+
+        let productType = document.getElementById(`productType`).value;
         
-        if(p_id && p_title && p_price && p_photos){
+        if(p_id && p_title && p_price && p_photos && productType){
             fetch("https://reshamdhaaga.herokuapp.com/add_product", {
                 method: "POST",
                 body: JSON.stringify({
                     id: p_id,
+                    product_type: productType,
                     title: p_title,
                     price: p_price,
                     photos: p_photos,
@@ -88,7 +91,16 @@ const AdminAdd = () => {
 
             <div className="col-12">
                 <form id='myForm1' onSubmit={addProduct}>
-                    <div className="input-group mb-3">
+
+                    <label htmlFor="productType">Choose product type :- </label>
+                    <select id="productType" required>
+                        <option value="">choose product type</option>
+                        <option value="anklet">anklet</option>
+                        <option value="rakhi">rakhi</option>
+                        <option value="bracelet">bracelet</option>
+                    </select>
+
+                    <div className="input-group mt-3 mb-3">
                         <span className="input-group-text myBackColor">Product Id</span>
                         <input type="text"  id="basic-id" className="form-control" placeholder="product id" aria-label="id" aria-describedby="basic-addon1" required />
                     </div>
