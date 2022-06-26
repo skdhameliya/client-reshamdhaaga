@@ -6,30 +6,28 @@ import './GetSomeProductsForIndexPage.css'
 const GetSomeProductsForIndexPage = () => {
 
     let [SomeProductsData, setSomeProductsData] = useState([]);
-
     useEffect(() => {
-        fetch("https://reshamdhaaga.herokuapp.com/all_products")
-        .then( (response) => {
-            return response.json()
-        } )
-        .then( (jsonData) => {
-            if(jsonData){
-                document.getElementById("loader").style.display = "none";
-                document.getElementById("myMain_GetAllProducts").style.display = "block";
-            }
-            jsonData.reverse()
-            sessionStorage.setItem("AllProductsData", JSON.stringify(jsonData))
-
-            SomeProductsData = []
-            for(let i=0; i<6; i++){
-                SomeProductsData.push(jsonData[i])
-            }
-            setSomeProductsData(SomeProductsData);
-            console.log("cc")
-        } )
-        .catch( (error) => {
-            console.log(error)
-        } );
+        if(sessionStorage.getItem("tempData")){
+            setSomeProductsData(JSON.parse(sessionStorage.getItem("tempData")))
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myMain_GetAllProducts").style.display = "block";
+        }else{
+            fetch(`https://reshamdhaaga.herokuapp.com/all_products/1`)
+                .then( (response) => {
+                    return response.json()
+                } )
+                .then( (jsonData) => {
+                    if(jsonData){
+                        setSomeProductsData(jsonData);
+                        sessionStorage.setItem("tempData", JSON.stringify(jsonData))
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("myMain_GetAllProducts").style.display = "block";
+                    }
+                } )
+                .catch( (error) => {
+                    console.log("error==>"+error)
+                } );
+        }
     },[]);
 
     return (
