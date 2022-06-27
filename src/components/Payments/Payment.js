@@ -26,18 +26,18 @@ export const Payment = async(p_title, amount, address, quantity) => {
         }
     
         const options = {
-            "key": "rzp_test_kUEScWO2XntWAl", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
             "amount": quantity * amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "SKD STORE "+p_title,
             "description": p_title + ", 1 piece price=>"+amount,
-            "image": "https://img.icons8.com/fluency/48/undefined/shop-location.png",
+            "image": "https://i.postimg.cc/9Fb8vjm7/logo.png",
             "notes": {
               "Product Quantity & Url": "Quantity="+quantity +" ("+amount+"rs) , URL="+window.location.href,
               "Customer Address": address
             },
             "theme": {
-              "color": "#94618e"
+              "color": "#F4DECB"
             },
             "handler": function (response){
                 if(response.razorpay_payment_id){
@@ -54,7 +54,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
 
                     let str = ""
                     str += "<center><dialog id='myDialog1' class='p-5 m-3'>"
-                      str += "<b>Please Save Your Payment ID : </b>"+response.razorpay_payment_id+" <br> <a class='btn btn-success mt-3' href='https://wa.me/+917016160266?text=Hi, Your Order Details : "+orderDetailUrl+"'>Send To WhatsApp</a>"
+                      str += "<b>Please Save Your Payment ID : </b>"+response.razorpay_payment_id+" <br> <a class='btn btn-success mt-3' href='https://wa.me/+917016160266?text=Hi, My Order Details : "+orderDetailUrl+"'>Send To WhatsApp</a>"
                     str += "</dialog></center>"
                     
                     window.document.getElementById("paymentDialog").innerHTML = str

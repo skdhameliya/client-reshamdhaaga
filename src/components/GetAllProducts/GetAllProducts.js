@@ -70,7 +70,7 @@ const GetAllProducts = () => {
                             SomeProductsData.map(product => (
 
                                     // return (
-                                        <div className="card p-2" key={product.id}>
+                                        <div className="card" key={product.id}>
                                             <Link to={`/product/${product.id}`} target="_blank"><img width="100%" src={product.photos[0]} className="card-img-top"  alt="Reshamdhaaga" /></Link>
                                             <div className="card-body">
                                                 <h5 className="card-title text-center">{product.title}</h5>
@@ -84,7 +84,7 @@ const GetAllProducts = () => {
                 </div>
             </div>
 
-            <center><button id='loadMoreBtn' className="btn btn-success mb-5" onClick={() => setN1(N1+8)}>Load More Products</button></center>
+            <center><button id='loadMoreBtn' className="btn btn-success m-4" onClick={() => setN1(N1+8)}>Load More Products</button></center>
 
         <Footer />
         </div>
