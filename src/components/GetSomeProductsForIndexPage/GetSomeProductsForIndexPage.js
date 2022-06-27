@@ -46,7 +46,7 @@ const GetSomeProductsForIndexPage = () => {
                         {
                             SomeProductsData.map(product => (
                                     <div className="card p-2" key={product.id}>
-                                        <Link to={`/product/${product.id}`} target="_blank"><img width="100%" src={product.photos[0]} className="card-img-top"  alt="skd" /></Link>
+                                        <Link to={`/product/${product.id}`} target="_blank"><img width="100%" src={product.photos[0]} className="card-img-top"  alt="Reshamdhaaga" /></Link>
                                         <div className="card-body">
                                             <h5 className="card-title text-center">{product.title}</h5>
                                         </div>

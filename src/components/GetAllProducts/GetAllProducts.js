@@ -15,13 +15,13 @@ const GetAllProducts = () => {
             return response.json()
         } )
         .then( (jsonData) => {
-            if(jsonData){
+            if(jsonData.length != 0){
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("myMain_GetAllProducts").style.display = "block";
                 setSomeProductsData([...SomeProductsData, ...jsonData]);
                 sessionStorage.setItem("AllProductsData", JSON.stringify([...SomeProductsData, ...jsonData]))
             }else{
-                alert("Products not found")
+                document.getElementById("loadMoreBtn").style.display = "none"
             }
         } )
         .catch( (error) => {
@@ -71,7 +71,7 @@ const GetAllProducts = () => {
 
                                     // return (
                                         <div className="card p-2" key={product.id}>
-                                            <Link to={`/product/${product.id}`} target="_blank"><img width="100%" src={product.photos[0]} className="card-img-top"  alt="skd" /></Link>
+                                            <Link to={`/product/${product.id}`} target="_blank"><img width="100%" src={product.photos[0]} className="card-img-top"  alt="Reshamdhaaga" /></Link>
                                             <div className="card-body">
                                                 <h5 className="card-title text-center">{product.title}</h5>
                                             </div>
@@ -84,7 +84,7 @@ const GetAllProducts = () => {
                 </div>
             </div>
 
-            <center><button className="btn btn-success mb-5" onClick={() => setN1(N1+8)}>Load More Products</button></center>
+            <center><button id='loadMoreBtn' className="btn btn-success mb-5" onClick={() => setN1(N1+8)}>Load More Products</button></center>
 
         <Footer />
         </div>

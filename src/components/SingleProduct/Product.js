@@ -69,7 +69,7 @@ const Product = () => {
             {
               ProductPhotos.map(i => (
                 <div className="col-sm-6" key={i}>
-                    <a href={i} target="_blank"><img className="d-block w-100 pt-2" src={i} alt="skd" /></a>
+                    <a href={i} target="_blank"><img className="d-block w-100 pt-2" src={i} alt="Reshamdhaaga" /></a>
                 </div>
               ))
             }
@@ -98,8 +98,8 @@ const Product = () => {
                 
                 <button id="rzp-button1" onClick={checkAddress} className="btn myBackColor mt-3">Buy</button>
                 <div className="btn-group mt-3" role="group" aria-label="Basic example">
-                  <a href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="" /></a>
-                  <a href={Product1.instagram_link} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="" /></a>
+                  <a href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /></a>
+                  <a href={Product1.instagram_link} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram" /></a>
                 </div>
               </div>
 
