@@ -54,7 +54,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
 
                     let str = ""
                     str += "<center><dialog id='myDialog1' class='p-5 m-3'>"
-                      str += "<b>Please Save Your Payment ID : </b>"+response.razorpay_payment_id+" <br> <a class='btn btn-success mt-3' href='https://wa.me/+918980129712?text=Hi, Your Order Details : "+orderDetailUrl+"'>Send To WhatsApp</a>"
+                      str += "<b>Please Save Your Payment ID : </b>"+response.razorpay_payment_id+" <br> <a class='btn btn-success mt-3' href='https://wa.me/+917016160266?text=Hi, Your Order Details : "+orderDetailUrl+"'>Send To WhatsApp</a>"
                     str += "</dialog></center>"
                     
                     window.document.getElementById("paymentDialog").innerHTML = str

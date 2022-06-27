@@ -98,7 +98,7 @@ const Product = () => {
                 
                 <button id="rzp-button1" onClick={checkAddress} className="btn myBackColor mt-3">Buy</button>
                 <div className="btn-group mt-3" role="group" aria-label="Basic example">
-                  <a href={`https://wa.me/+918980129712?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /></a>
+                  <a href={`https://wa.me/+917016160266?text=Hi, I am Looking for ${window.location.href}`} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /></a>
                   <a href={Product1.instagram_link} type="button" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram" /></a>
                 </div>
               </div>

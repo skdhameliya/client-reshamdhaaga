@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container-fluid text-center pb-5 footerDiv">
                 <h3 className="myMainTitle text-center mb-4">Contact Us</h3>
                 <div className="btn-group" role="group" aria-label="Basic example">
-                    <a className="p-1" href="https://wa.me/+918980129712?text=Hi" target={"_blank"}><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /></a>
+                    <a className="p-1" href="https://wa.me/+917016160266?text=Hi" target={"_blank"}><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" /></a>
                     <a className="p-1" href="https://www.instagram.com/rakhi_reshamdhaaga/"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram" /></a>
                     <a className="p-1" href="https://www.instagram.com/rakhi_reshamdhaaga/"> <img src="https://img.icons8.com/color/48/undefined/facebook-new.png" alt="Facebook" /> </a>
                 </div>
