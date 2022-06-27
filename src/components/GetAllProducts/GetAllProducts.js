@@ -7,42 +7,31 @@ const GetAllProducts = () => {
 
     let [SomeProductsData, setSomeProductsData] = useState([]);
     let [N1, setN1] = useState(0);
+    let [ProductType, setProductType] = useState("all");
+
+    const getData = async(product_type) => {
+        fetch(`https://reshamdhaaga.herokuapp.com/all_products/${N1}/${ProductType}`)
+        .then( (response) => {
+            return response.json()
+        } )
+        .then( (jsonData) => {
+            if(jsonData){
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myMain_GetAllProducts").style.display = "block";
+                setSomeProductsData([...SomeProductsData, ...jsonData]);
+                sessionStorage.setItem("AllProductsData", JSON.stringify([...SomeProductsData, ...jsonData]))
+            }else{
+                alert("Products not found")
+            }
+        } )
+        .catch( (error) => {
+            console.log("error==>"+error)
+        } );
+    }
 
     useEffect(() => {
-        const getData = async() => {
-            fetch(`https://reshamdhaaga.herokuapp.com/all_products/${N1}`)
-            .then( (response) => {
-                return response.json()
-            } )
-            .then( (jsonData) => {
-                if(jsonData){
-                    document.getElementById("loader").style.display = "none";
-                    document.getElementById("myMain_GetAllProducts").style.display = "block";
-                    setSomeProductsData([...SomeProductsData, ...jsonData]);
-                    sessionStorage.setItem("AllProductsData", JSON.stringify([...SomeProductsData, ...jsonData]))
-                }else{
-                    alert("Products not found")
-                }
-            } )
-            .catch( (error) => {
-                console.log("error==>"+error)
-            } );
-        }
-        getData()
+        getData(ProductType)
     },[N1]);
-    
-    const filterBy = (filterByValue) => {
-        filterByValue = filterByValue.toLowerCase()
-        setN1(0)
-        console.log(N1);
-        SomeProductsData = JSON.parse(sessionStorage.getItem("AllProductsData"))
-        setSomeProductsData(SomeProductsData)
-        let x = new Object(SomeProductsData)
-        // console.log(x);
-        // console.log(x.filter(product => product.product_type === filterByValue));
-        const filteredData = x.filter(product => product.product_type === filterByValue)
-        setSomeProductsData(filteredData)
-    }
     
     return (
         <>
@@ -55,9 +44,8 @@ const GetAllProducts = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-item nav-link" onClick={()=>filterBy("Anklet")} href="#">Anklet</a>
-                        <a className="nav-item nav-link" onClick={()=>filterBy("Rakhi")} href="#">Rakhi</a>
-                        <a className="nav-item nav-link" onClick={()=>filterBy("Bracelet")} href="#">Bracelet</a>
+                        <a className="nav-item nav-link" onClick={() => setProductType('Anklet')} href="#">Anklet</a>
+                        <a className="nav-item nav-link" onClick={() => setProductType("Rakhi")} href="#">Rakhi</a>
                     </div>
                 </div>
             </nav> */}

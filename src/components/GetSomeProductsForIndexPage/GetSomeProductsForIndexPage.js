@@ -12,7 +12,7 @@ const GetSomeProductsForIndexPage = () => {
             document.getElementById("loader").style.display = "none";
             document.getElementById("myMain_GetAllProducts").style.display = "block";
         }else{
-            fetch(`https://reshamdhaaga.herokuapp.com/all_products/1`)
+            fetch(`https://reshamdhaaga.herokuapp.com/all_products/1/rakhi`)
                 .then( (response) => {
                     return response.json()
                 } )
