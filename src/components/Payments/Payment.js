@@ -29,11 +29,11 @@ export const Payment = async(p_title, amount, address, quantity) => {
             "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
             "amount": quantity * amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
-            "name": "SKD STORE "+p_title,
-            "description": p_title + ", 1 piece price=>"+amount,
+            "name": "Reshamdhaaga Art",
+            "description": p_title,
             "image": "https://i.postimg.cc/9Fb8vjm7/logo.png",
             "notes": {
-              "Product Quantity & Url": "Quantity="+quantity +" ("+amount+"rs) , URL="+window.location.href,
+              "Product Quantity & Link": "Quantity="+quantity +" ("+amount+"rs) , Link="+window.location.href,
               "Customer Address": address
             },
             "theme": {
@@ -50,7 +50,6 @@ export const Payment = async(p_title, amount, address, quantity) => {
                     +", *Total Amount ->* "+(amount*quantity)
                     +", *Delivery Address ->* "+address
                     +", *Product Link ->* "+window.location.href
-                    +", *Thank you for shopping with us!*"
 
                     let str = ""
                     str += "<center><dialog id='myDialog1' class='p-5 m-3'>"
