@@ -39,6 +39,11 @@ export const Payment = async(p_title, amount, address, quantity) => {
             "theme": {
               "color": "#F4DECB"
             },
+            "options": {
+              "checkout": {
+                "name": "Lacme Corp"
+              }
+            },
             "handler": function (response){
                 if(response.razorpay_payment_id){
                   let text = "Your Payment ID = "+response.razorpay_payment_id+" please take the screenshot"
