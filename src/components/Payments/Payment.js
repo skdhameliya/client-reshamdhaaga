@@ -50,7 +50,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
                     let orderDetailUrl = " *Payment ID ->* "+response.razorpay_payment_id
                     +", *Product Name ->* "+p_title
                     +", *Quantity ->* "+quantity
-                    +", *Total Amount ->* "+(amount*quantity)
+                    +", *Paid Amount ->* "+(total_amount+delivery_charge)
                     +", *Delivery Address ->* "+address
                     +", *Product Link ->* "+window.location.href
 
