@@ -24,13 +24,15 @@ export const Payment = async(p_title, amount, address, quantity) => {
           alert("Network Error...")
           return
         }
+
+        const delivery_charge = 50
     
         const options = {
             "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
-            "amount": quantity * amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": (quantity * amount * 100) + delivery_charge, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Reshamdhaaga Art",
-            "description": p_title,
+            "description": delivery_charge + " Rs delivery charge is added",
             "image": "https://i.postimg.cc/9Fb8vjm7/logo.png",
             "notes": {
               "Product Quantity & Link": "Quantity="+quantity +" ("+amount+"rs) , Link="+window.location.href,
