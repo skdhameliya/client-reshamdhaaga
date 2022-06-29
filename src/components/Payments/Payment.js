@@ -33,7 +33,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
             "amount": (total_amount + delivery_charge)*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Reshamdhaaga Art",
-            "description": total_amount + "+" + delivery_charge + " Rs delivery charge is added",
+            "description": delivery_charge + " Rs delivery charge is added",
             "image": "https://i.postimg.cc/9Fb8vjm7/logo.png",
             "notes": {
               "Product Quantity & Link": "Quantity="+quantity +" ("+amount+"rs) , Link="+window.location.href,

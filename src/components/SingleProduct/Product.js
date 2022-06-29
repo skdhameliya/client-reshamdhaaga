@@ -79,7 +79,10 @@ const Product = () => {
           <div className="d-flex flex-column bd-highlight mt-5 ml-3">
               <p className="bd-highlight"><b>Product Type : {Product1.product_type}</b></p>
 
-              <p className="bd-highlight"><b>Price : &#8377; {Product1.price}</b></p>
+              <p className="bd-highlight">
+                <b>Price : &#8377; {Product1.price}</b>
+                {/* <small className="form-text text-muted"><b>Note: </b>&#8377; 50 Delivery Charge</small> */}
+              </p>
               
               <div className="bd-highlight">
                 <div className="input-group">
