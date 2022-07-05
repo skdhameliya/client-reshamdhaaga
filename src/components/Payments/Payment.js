@@ -26,7 +26,7 @@ export const Payment = async(p_title, amount, address, quantity) => {
         }
 
         const total_amount = quantity * amount
-        const delivery_charge = 50
+        const delivery_charge = 30
     
         const options = {
             "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
