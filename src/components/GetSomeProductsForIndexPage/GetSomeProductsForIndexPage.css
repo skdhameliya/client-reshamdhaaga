@@ -1,0 +1,27 @@
+#myMain_GetAllProducts{
+    display: none;
+}
+
+.card{
+    width: 24%;
+    margin: 5px;
+}
+img{
+    transition: 0.5s ease-in-out;
+}
+img:hover {
+    transform: scale(1.05);
+}
+.card:hover .card-body{
+    transition: 0.5s ease-in-out;
+    background-color: #F4DECB;
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .card{
+        width: 47%;
+        margin: 5px;
+    }
+}
