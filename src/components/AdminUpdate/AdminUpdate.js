@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { server_url } from '../Constants/Strings';
 
 const AdminUpdate = () => {
 
@@ -13,7 +14,7 @@ const AdminUpdate = () => {
         const productID = (document.getElementById("product_id").value).toLowerCase()
 
         if(productID){
-            fetch(`https://reshamdhaaga.herokuapp.com/product/${productID}`)
+            fetch(`${server_url}/product/${productID}`)
                 .then( (apiData) => {
                     return apiData.json()
                 } )
@@ -40,7 +41,7 @@ const AdminUpdate = () => {
     const updateProduct = (event) => {
         event.preventDefault()
         let p_instagram_link = document.getElementById(`Product-Instagram-Link`).value;
-        fetch("https://reshamdhaaga.herokuapp.com/p_update", {
+        fetch(server_url+"/p_update", {
                 method: "PATCH",
                 body: JSON.stringify({
                     id: Product1.id,

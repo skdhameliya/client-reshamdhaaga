@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import { server_url } from '../Constants/Strings'
 
 const AdminAdd = () => {
 
@@ -40,7 +41,7 @@ const AdminAdd = () => {
         let productType = document.getElementById(`productType`).value;
         
         if(p_id && p_title && p_price && p_photos && productType){
-            fetch("https://reshamdhaaga.herokuapp.com/add_product", {
+            fetch(server_url+"/add_product", {
                 method: "POST",
                 body: JSON.stringify({
                     id: p_id,

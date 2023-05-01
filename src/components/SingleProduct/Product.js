@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Payment } from '../Payments/Payment'
 import Footer from '../Footer/Footer'
 import './Product.css'
+import { server_url } from '../Constants/Strings';
 
 
 const Product = () => {
@@ -13,7 +14,7 @@ const Product = () => {
   let [ProductPhotos, setProductPhotos] = useState([])
  
   useEffect(() => {
-    fetch(`https://reshamdhaaga.herokuapp.com/product/${productID}`)
+    fetch(`${server_url}/product/${productID}`)
     .then( (apiData) => {
         return apiData.json()
     } )
