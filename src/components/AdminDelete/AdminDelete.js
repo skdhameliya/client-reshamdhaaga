@@ -1,4 +1,5 @@
 import React from 'react'
+import { server_url } from '../Constants/Strings'
 
 const AdminDelete = () => {
     
@@ -9,7 +10,7 @@ const AdminDelete = () => {
         const productID = (document.getElementById("product_id").value).toLowerCase()
 
         if(productID){
-            fetch("https://reshamdhaaga.herokuapp.com/p_delete", {
+            fetch(server_url+"/p_delete", {
                 method: "DELETE",
                 body: JSON.stringify({
                     id: productID,
