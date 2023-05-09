@@ -29,7 +29,8 @@ export const Payment = async(p_title, amount, address, quantity) => {
         const delivery_charge = 50
     
         const options = {
-            "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
+            // "key": "rzp_live_ZLPy9MP5mjsXHD", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_test_ghGuxlQix1Ks9b", // test api key
             "amount": (total_amount + delivery_charge)*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Reshamdhaaga Art",
